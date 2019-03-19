@@ -5,9 +5,7 @@ node_js:
 
 before_install:
   - export TZ='Asia/Shanghai'
-  - npm install gitbook-cli -g
-  - gitbook fetch 3.2.3
-  - sudo apt-get update -qq
+  - npm install gitbook-cli@3.2.3 -g
 
 install:
   - gitbook install
@@ -15,7 +13,6 @@ install:
 before_script:
 
 script:
-  - sudo fc-cache -f -v
   - gitbook build .
 
 branches:
