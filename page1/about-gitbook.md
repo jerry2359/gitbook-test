@@ -10,6 +10,7 @@ console.log('关于GitBook');
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>这是一个测试文件</title>
 </head>
 <body>
 <div id="app"></div>

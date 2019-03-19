@@ -1,12 +1,11 @@
 sudo: required
 language: node_js
 node_js:
-  - stable
+  - "10.15.1"
 
 before_install:
   - export TZ='Asia/Shanghai'
   - npm install gitbook-cli -g
-  - npm install svgexport -g
   - gitbook fetch 3.2.3
   - sudo apt-get update -qq
 
