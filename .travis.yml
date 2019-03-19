@@ -1,0 +1,36 @@
+sudo: required
+language: node_js
+node_js:
+  - "10.15.1"
+
+before_install:
+  - export TZ='Asia/Shanghai'
+  - npm install gitbook-cli -g
+  - gitbook fetch 3.2.3
+  - sudo apt-get update -qq
+
+install:
+  - gitbook install
+
+before_script:
+
+script:
+  - gitbook build .
+
+branches:
+  only:
+    - master
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    local_dir: _book
+    name: Jerry
+    email: 799376587@qq.com
+    verbose: true
+    on:
+      branch: master
+    github_token: $GITHUB_TOKEN
+
+after_success:
+  - ls -lh
